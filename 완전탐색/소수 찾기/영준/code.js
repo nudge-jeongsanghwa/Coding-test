@@ -1,6 +1,4 @@
 function solution(numbers) {
-  // 경우의 수: 7!(5040) + 9999999
-
   const permutation = (arr, processing, result) => {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] === -1) continue;
