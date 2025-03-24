@@ -18,20 +18,20 @@ function solution(k, dungeons) {
 
       visited[i] = true;
 
-      // 2. 재귀적으로 방문한 던전의 최대 개수를 구한다.
+      // 1-1. 재귀적으로 방문한 던전의 최대 개수를 구한다.
       const newCount = goDungeon(count + 1, point - consume, visited, dungeons);
 
-      // 3. 현재 시점에 방문 가능한 던전의 최대 개수를 갱신한다.
+      // 1-2. 현재 시점에 방문 가능한 던전의 최대 개수를 갱신한다.
       maxCount = Math.max(maxCount, newCount);
 
       visited[i] = false;
     }
 
-    // 4. 현재 시점에 방문 가능한 던전의 최대 개수를 반환한다.
+    // 1-3. 현재 시점에 방문 가능한 던전의 최대 개수를 반환한다.
     return maxCount;
   };
 
-  // 5. 재귀함수를 실행한다.
+  // 2. 재귀함수를 실행한다.
   return goDungeon(0, k, new Array(dungeons.length).fill(false), dungeons);
 }
 ```
